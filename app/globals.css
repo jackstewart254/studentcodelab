@@ -2,9 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Import Geist Sans from a CDN or self-hosted font */
+@import url('https://fonts.cdnurl.com/geist-sans.css'); /* Replace with the correct URL */
+
+/* Define custom properties for colors */
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --font-geist-sans: 'Geist Sans', Arial, Helvetica, sans-serif; /* Add Geist Sans as the default font */
 }
 
 @media (prefers-color-scheme: dark) {
@@ -14,8 +19,9 @@
   }
 }
 
+/* Apply the custom font and theme colors to the body */
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans);
 }
