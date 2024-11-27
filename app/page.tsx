@@ -2,7 +2,7 @@
 import Header from "./components/header";
 import { useEffect, useState } from "react";
 import { Dimensions } from "./types/Dimensions";
-import Landing from "./pages/landing/page";
+import Landing from "./landing/page";
 
 export default function Home() {
   const [dimensions, setDimensions] = useState<Dimensions>({
@@ -15,8 +15,10 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="flex flex-col h-screen w-screen bg-[#171717] fixed">
-      <Header />
+    <div
+      className="flex flex-col w-screen bg-[#171717] fixed"
+      style={{ height: dimensions.height - 60 }}
+    >
       <Landing dims={dimensions} />
     </div>
   );

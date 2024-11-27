@@ -19,7 +19,6 @@
   }
 }
 
-/* Apply the custom font and theme colors to the body */
 body {
   color: var(--foreground);
   background: var(--background);

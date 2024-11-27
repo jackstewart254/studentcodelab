@@ -2,7 +2,7 @@
 import { Dimensions } from "@/app/types/Dimensions";
 import { useEffect, useState } from "react";
 import { motion } from "motion/react";
-import { arrow, org, user } from "../../components/svg/svg";
+import { arrow, org, user } from "../components/svg/svg";
 
 const Landing = ({ dims }: { dims: Dimensions }) => {
   const [refresh, setRefresh] = useState<boolean>(false);
@@ -136,7 +136,7 @@ const Landing = ({ dims }: { dims: Dimensions }) => {
             animate={{ opacity: textAnim >= 2 ? 1 : 0 }}
             className="text-white"
           >
-            {render < 3 ? "- Add tips" : "- Check security"}
+            {render < 3 ? "- Add suggestions" : "- Check security"}
           </motion.p>
         </div>
       </div>
