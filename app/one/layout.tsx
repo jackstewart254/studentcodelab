@@ -21,14 +21,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <GlobalProvider>
-      <html
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#171717] fixed`}
-      >
-        <div className="antialiased bg-[#171717] fixed w-screen h-screen">
-          {children}
-        </div>
-      </html>
-    </GlobalProvider>
+    // <GlobalProvider>
+    <html
+      className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#171717] fixed`}
+    >
+      <div className="antialiased bg-[#171717] fixed w-screen h-screen">
+        {children}
+      </div>
+    </html>
+    // </GlobalProvider>
   );
 }
