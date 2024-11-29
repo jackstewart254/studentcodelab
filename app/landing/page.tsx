@@ -14,19 +14,19 @@ const Landing = ({ dims }: { dims: Dimensions }) => {
       const timer1 = setTimeout(() => setRender(1), 500);
       const timer2 = setTimeout(() => {
         setRender(2);
-      }, 2500);
-      const timer3 = setTimeout(() => setRender(3), 3500);
+      }, 3500);
+      const timer3 = setTimeout(() => setRender(3), 4500);
       const timer4 = setTimeout(() => {
         setRender(4);
-      }, 5500);
-      const timer5 = setTimeout(() => setRender(5), 6500);
+      }, 6500);
+      const timer5 = setTimeout(() => setRender(5), 8500);
       const timer6 = setTimeout(() => {
         setRender(6);
-      }, 7500);
+      }, 9500);
       const timer7 = setTimeout(() => {
         setRender(7);
         setRefresh(false);
-      }, 8500);
+      }, 10500);
 
       return () => {
         clearTimeout(timer1);
