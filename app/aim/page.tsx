@@ -16,26 +16,24 @@ const Aim = () => {
   }, []);
 
   return (
-    <div
-      className="w-full items-center justify-center flex"
-      style={{ height: dimensions.height - 60 }}
-    >
-      <div className={`h-[200px] w-[403px] flex flex-col`}>
-        <p className="text-[24px] text-white font-[600] mb-[30px]">
-          Student Code Lab <span className="text-[16px] font-[400]">is a</span>{" "}
-          Student only Software Marketplace.{" "}
+    <div className="w-screen items-start sm:items-center justify-center flex p-[20px] h-[calc(100vh-60px)]">
+      <div className="w-[260px] sm:w-[420px] grid grid-rows-[auto,auto,auto] gap-5 items-center justify-center">
+        <p className="text-lg sm:text-2xl   text-white font-[600]">
+          Student Code Lab{" "}
+          <span className="text-sm sm:text-lg font-[400]">is a</span> Student
+          only Software Marketplace.{" "}
         </p>
-        <p className="text-[24px] text-white font-[600] mb-[30px]">
-          <span className="text-[16px] font-[400]">We are</span> Building{" "}
-          <span className="text-[16px] font-[400]">a</span> Generation{" "}
-          <span className="text-[16px] font-[400]">of</span> Young, Skilled{" "}
-          <span className="text-[16px] font-[400]">and </span>
+        <p className="text-lg sm:text-2xl text-white font-[600]">
+          <span className="text-sm sm:text-lg font-[400]">We are</span> Building{" "}
+          <span className="text-sm sm:text-lg font-[400]">a</span> Generation{" "}
+          <span className="text-sm sm:text-lg font-[400]">of</span> Young,
+          Skilled <span className="text-sm sm:text-lg font-[400]">and </span>
           Ambitious Developers.
         </p>
-        <p className="text-[24px] text-white font-[600] mb-[30px]">
+        <p className="text-lg sm:text-2xl text-white font-[600]">
           Learn
-          <span className="text-[16px] font-[400]">,</span> Build{" "}
-          <span className="text-[16px] font-[400]">and </span> Earn.
+          <span className="text-sm sm:text-lg font-[400]">,</span> Build{" "}
+          <span className="text-sm sm:text-lg font-[400]">and </span> Earn.
         </p>
       </div>
     </div>

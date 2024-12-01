@@ -3,7 +3,8 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Header from "./components/header";
 import { GlobalProvider } from "../app/context/global";
-
+import { usePathname } from "next/navigation";
+import Sidebar from "./components/sidebar";
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -15,10 +16,10 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
-export const metadata: Metadata = {
-  title: "Student Code Lab",
-  description: "The future of Tech",
-};
+// export const metadata: Metadata = {
+//   title: "Student Code Lab",
+//   description: "The future of Tech",
+// };
 
 export default function RootLayout({
   children,
@@ -29,10 +30,13 @@ export default function RootLayout({
     <GlobalProvider>
       <html lang="en">
         <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#171717] fixed`}
+          className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#171717] fixed w-screen h-screen grid grid-rows-[auto,auto]`}
         >
           <Header />
-          {children}
+          <div className="grid grid-cols-[auto,auto] relative">
+            <Sidebar />
+            {children}
+          </div>
         </body>
       </html>
     </GlobalProvider>

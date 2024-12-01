@@ -1,10 +1,8 @@
 "use client";
-import Header from "./components/header";
 import { useEffect, useState } from "react";
-import { Dimensions } from "./types/Dimensions";
-import Landing from "./landing/page";
+import { Dimensions } from "../types/Dimensions";
 
-export default function Home() {
+const Profile = () => {
   const [dimensions, setDimensions] = useState<Dimensions>({
     width: 0,
     height: 0,
@@ -16,10 +14,12 @@ export default function Home() {
 
   return (
     <div
-      className="w-screen bg-[#171717] flex"
-      style={{ height: dimensions.height - 60 }}
+      className="p-5"
+      style={{ width: dimensions.width - 60, height: dimensions.height - 60 }}
     >
-      <Landing dims={dimensions} />
+      <h1 className="text-white">Profile</h1>
     </div>
   );
-}
+};
+
+export default Profile;

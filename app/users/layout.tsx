@@ -1,7 +1,5 @@
-import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "../globals.css";
-import Header from "../components/header";
 import { GlobalProvider } from "../context/global";
 
 const geistSans = localFont({
@@ -15,20 +13,14 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
-export default function RootLayout({
+export default function SubLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    // <GlobalProvider>
-    <html
-      className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#171717] fixed`}
-    >
-      <div className="antialiased bg-[#171717] fixed w-screen h-screen">
-        {children}
-      </div>
-    </html>
-    // </GlobalProvider>
+    <div className="custom-layout">
+      <main>{children}</main>
+    </div>
   );
 }

@@ -92,12 +92,12 @@ const Landing = ({ dims }: { dims: Dimensions }) => {
   }, [textAnim]);
 
   const renderMoving = () => (
-    <div className="flex flex-row items-center mt-[40px]">
-      <div className="h-[110px] w-[100px] border border-[#818181] rounded-[10px] flex items-center justify-center">
+    <div className="flex-row items-center hidden sm:flex ">
+      <div className="sm:h-[110px] sm:w-[100px] h-[90px] w-[80px] border border-[#818181] rounded-[10px] flex items-center justify-center">
         {org()}
       </div>
-      <motion.div className="w-[51px] relative mx-[40px] justify-center flex h-[15px]">
-        <p className="absolute top-[-28px] text-white">
+      <motion.div className="w-[51px] relative mx-[20px] md:mx-[40px] justify-center flex h-[15px]">
+        <p className="absolute top-[-28px] text-white text-sm md:text-base">
           {render >= 0 && render < 4
             ? "Task"
             : render === 4
@@ -118,7 +118,9 @@ const Landing = ({ dims }: { dims: Dimensions }) => {
         </motion.div>
       </motion.div>
       <div className="flex flex-col relative items-center">
-        <p className="text-white font-[600] text-[24px]">Student Code Lab</p>
+        <p className="text-white font-[600] text-lg md:text-2xl">
+          Student Code Lab
+        </p>
         <div className="absolute bottom-[-56px] flex flex-col w-[140px]">
           <motion.p
             initial={{ opacity: 0 }}
@@ -140,8 +142,8 @@ const Landing = ({ dims }: { dims: Dimensions }) => {
           </motion.p>
         </div>
       </div>
-      <motion.div className="h-[15px] relative mx-[40px] items-center w-[51px] flex flex-col">
-        <p className="absolute top-[-28px] text-white">
+      <motion.div className="h-[15px] relative mx-[20px] md:mx-[40px] items-center w-[51px] flex flex-col">
+        <p className="absolute top-[-28px] text-white text-sm md:text-base">
           {render < 2
             ? ""
             : render === 2
@@ -168,16 +170,14 @@ const Landing = ({ dims }: { dims: Dimensions }) => {
   );
 
   return (
-    <div
-      style={{ height: `${dims.height - 60}px` }}
-      className="w-screen items-center justify-center flex flex-col"
-    >
+    <div className="items-center justify-start sm:justify-center flex flex-col gap-10 h-[calc(100vh-60px)] w-[calc(100vw)] p-5">
       <div className="flex flex-col items-center">
-        <h1 className="text-white text-[32px] font-[600] mb-5">
+        <h1 className="text-white text-xl sm:text-3xl font-[600] mb-5 text-center">
           Software Marketplace for Students
         </h1>
-        <p className="text-white text-[20px] font-[600]">
-          Find, Solve <span className="font-[300]">and</span> Earn
+        <p className="text-white text-lg sm:text-xl font-[600]">
+          Find, Solve{" "}
+          <span className="font-[300] text-sm sm:text-base">and</span> Earn
         </p>
       </div>
       {renderMoving()}
