@@ -7,7 +7,7 @@ import { usePathname, useRouter } from "next/navigation";
 const Header = () => {
   const pathname = usePathname();
   const hideHeaderPaths = ["/users/signup", "/users/login"];
-  const paths = ["/explore", "/library", "/profile"];
+  const paths = ["/explore", "/library", "/profile", "/blog"];
   console.log(pathname);
   const { global, setGlobal } = useGlobal();
   const { render } = global;
@@ -33,6 +33,9 @@ const Header = () => {
     if (newRender === "login") {
       route.push("/users/login");
     }
+    if (newRender === "blog") {
+      route.push("/blog");
+    }
   };
 
   if (hideHeaderPaths.includes(pathname)) {
@@ -53,12 +56,14 @@ const Header = () => {
           </button>
           {paths.includes(pathname) && (
             <button
-              // onClick={() => {
-              //   changeRender("blog");
-              // }}
-              className="border border-white items-center inline-block p-0"
+              onClick={() => {
+                changeRender("blog");
+              }}
+              className="items-center inline-block p-0"
             >
-              <p className="text-white text-sm font-[400] m-0">Blog</p>
+              <p className="text-white hover:text-[#8A8A8C] text-sm font-[400] m-0">
+                Blog
+              </p>
             </button>
           )}
           {!paths.includes(pathname) && (

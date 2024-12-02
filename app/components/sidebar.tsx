@@ -7,7 +7,7 @@ import { useGlobal } from "../context/global";
 
 const Sidebar = () => {
   const { global, setGlobal } = useGlobal();
-  const paths = ["/explore", "/library", "/profile"];
+  const paths = ["/explore", "/library", "/profile", "/blog"];
   const pathname = usePathname();
   const [Dimensions, setDimensions] = useState<Dimensions>({
     width: 0,
