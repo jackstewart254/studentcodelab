@@ -19,7 +19,7 @@ export default function Home() {
       className="w-screen bg-[#171717] flex"
       style={{ height: dimensions.height - 60 }}
     >
-      <Landing dims={dimensions} />
+      <Landing />
     </div>
   );
 }

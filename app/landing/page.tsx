@@ -1,10 +1,9 @@
 "use client";
-import { Dimensions } from "@/app/types/Dimensions";
 import { useEffect, useState } from "react";
 import { motion } from "motion/react";
 import { arrow, org, user } from "../components/svg/svg";
 
-const Landing = ({ dims }: { dims: Dimensions }) => {
+const Landing = () => {
   const [refresh, setRefresh] = useState<boolean>(false);
   const [render, setRender] = useState<number>(0);
   const [textAnim, setTextAnim] = useState<number>(0);
@@ -86,10 +85,6 @@ const Landing = ({ dims }: { dims: Dimensions }) => {
       // }, 1500);
     }
   }, [render]);
-
-  useEffect(() => {
-    console.log(textAnim);
-  }, [textAnim]);
 
   const renderMoving = () => (
     <div className="flex-row items-center hidden sm:flex ">
