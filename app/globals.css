@@ -3,13 +3,13 @@
 @tailwind utilities;
 
 /* Import Geist Sans from a CDN or self-hosted font */
-@import url('https://fonts.cdnurl.com/geist-sans.css'); /* Replace with the correct URL */
+@import url("https://fonts.cdnurl.com/geist-sans.css"); /* Replace with the correct URL */
 
 /* Define custom properties for colors */
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --font-geist-sans: 'Geist Sans', Arial, Helvetica, sans-serif; /* Add Geist Sans as the default font */
+  --font-geist-sans: "Geist Sans", Arial, Helvetica, sans-serif; /* Add Geist Sans as the default font */
 }
 
 @media (prefers-color-scheme: dark) {
@@ -23,4 +23,12 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: var(--font-geist-sans);
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Hides scrollbar in WebKit-based browsers */
+}
+.scrollbar-hide {
+  -ms-overflow-style: none; /* Hides scrollbar in Internet Explorer */
+  scrollbar-width: none; /* Hides scrollbar in Firefox */
 }

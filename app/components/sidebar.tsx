@@ -4,6 +4,7 @@ import { Dimensions } from "../types/Dimensions";
 import { motion } from "motion/react";
 import { usePathname, useRouter } from "next/navigation";
 import { useGlobal } from "../context/global";
+import clsx from "clsx";
 
 const Sidebar = () => {
   const { global, setGlobal } = useGlobal();
@@ -46,7 +47,14 @@ const Sidebar = () => {
               changeRender("explore");
             }}
           >
-            <p className="text-white text-sm font-[400] hover:text-[#8A8A8C]">
+            <p
+              className={clsx(
+                "text-sm font-[400]",
+                pathname === paths[0]
+                  ? "text-[#8A8A8C]"
+                  : "text-white hover:text-[#8A8A8C]"
+              )}
+            >
               Explore
             </p>
           </button>

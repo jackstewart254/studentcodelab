@@ -50,7 +50,7 @@ const Header = () => {
               changeRender("landing");
             }}
           >
-            <h1 className="text-white  text-sm font-[600] sm:text-sm md:text-md lg:text-lg">
+            <h1 className="text-white  text-base font-[600] sm:text-lg md:text-lg lg:text-lg">
               Student Code Lab
             </h1>
           </button>

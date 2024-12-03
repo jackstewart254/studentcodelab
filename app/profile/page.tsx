@@ -13,10 +13,7 @@ const Profile = () => {
   }, []);
 
   return (
-    <div
-      className="p-5"
-      style={{ width: dimensions.width - 60, height: dimensions.height - 60 }}
-    >
+    <div className="p-5 w-[calc(100vw-100px)] h-[calc(100vh-60px)]">
       <h1 className="text-white">Profile</h1>
     </div>
   );
