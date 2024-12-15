@@ -48,9 +48,7 @@ const Popup = () => {
 
   const alreadyPresent = () => (
     <div className="w-[240px] bg-white border border-[#d9d9d9] p-[10px] rounded-md sm:w-[320px] absolute z-20 flex flex-col gap-[10px]">
-      <p className="text-sm font-[500]">
-        You've already joined the Early Birds
-      </p>
+      <p className="text-sm font-[500]">You've already joined the waitlist</p>
       <button
         className="w-full py-1 bg-red-600 rounded-md"
         onClick={closePopup}
