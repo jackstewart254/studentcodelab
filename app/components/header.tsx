@@ -25,7 +25,7 @@ const Header = () => {
       route.push("/case");
     }
     if (newRender === "contact") {
-      route.push("/contact");
+      route.push("/waitlist");
     }
     if (newRender === "signup") {
       route.push("/users/signup");
@@ -92,7 +92,7 @@ const Header = () => {
                     color: render === "contact" ? "#8A8A8C" : "white",
                   }}
                 >
-                  Contact
+                  Join Waitlist
                 </motion.p>
               </button>
               <button
