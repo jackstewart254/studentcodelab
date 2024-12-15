@@ -2,6 +2,8 @@
 import { useGlobal } from "../context/global";
 import { motion } from "motion/react";
 import { useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
+import { useEffect } from "react";
 
 const Popup = () => {
   const { global, setGlobal } = useGlobal();
@@ -61,6 +63,7 @@ const Popup = () => {
   return (
     <motion.div
       className="w-full h-full absolute flex items-center justify-center z-10"
+      initial={{ zIndex: -100, opacity: 0 }}
       animate={{
         opacity: showPopup === true ? 1 : 0,
         zIndex: showPopup === true ? 10 : -100,

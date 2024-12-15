@@ -45,7 +45,7 @@ const Header = () => {
       <div className="flex flex-row h-[60px] border-b border-[#2E2E2E] lg:px-[40px] md:px-[40px] sm:px-[20px] px-[10px] items-center justify-between w-screen">
         <div className="items-center grid grid-cols-[auto,auto]">
           <button
-            className="mr-[10px] sm:mr-[10px] md:mr-[20px] lg:mr-[20px]"
+            className="mr-5"
             onClick={() => {
               changeRender("landing");
             }}
@@ -70,7 +70,7 @@ const Header = () => {
             </button>
           )}
           {!paths.includes(pathname) && (
-            <div className="grid-cols-2 items-center flex gap-[10px] md:gap-5 lg:gap-5">
+            <div className="grid-cols-2 items-center flex gap-5 md:gap-5 lg:gap-5">
               {/* <button
                 className="hidden sm:hidden md:flex lg:flex"
                 onClick={() => {
@@ -86,18 +86,26 @@ const Header = () => {
                   changeRender("contact");
                 }}
               >
-                <p className="text-white hover:text-[#8A8A8C] text-[14px] font-[400]">
+                <motion.p
+                  className="text-white hover:text-[#8A8A8C] text-[14px] font-[400]"
+                  animate={{
+                    color: render === "contact" ? "#8A8A8C" : "white",
+                  }}
+                >
                   Contact
-                </p>
+                </motion.p>
               </button>
               <button
                 onClick={() => {
                   changeRender("missionStatement");
                 }}
               >
-                <p className="text-white hover:text-[#8A8A8C] text-[14px] font-[400]">
+                <motion.p
+                  className="text-white hover:text-[#8A8A8C] text-[14px] font-[400]"
+                  animate={{ color: render === "aim" ? "#8A8A8C" : "white" }}
+                >
                   Mission Statement
-                </p>
+                </motion.p>
               </button>
             </div>
           )}

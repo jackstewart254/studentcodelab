@@ -4,15 +4,10 @@ import { Dimensions } from "../types/Dimensions";
 import { useGlobal } from "../context/global";
 
 const Aim = () => {
-  const [dimensions, setDimensions] = useState<Dimensions>({
-    width: 0,
-    height: 0,
-  });
   const { global, setGlobal } = useGlobal();
 
   useEffect(() => {
     setGlobal({ ...global, render: "aim" });
-    setDimensions({ width: window.innerWidth, height: window.innerHeight });
   }, []);
 
   return (

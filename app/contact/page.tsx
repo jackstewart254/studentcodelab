@@ -21,6 +21,10 @@ const Contact = () => {
     university: "",
   });
 
+  useEffect(() => {
+    setGlobal({ ...global, render: "contact" });
+  }, []);
+
   const updateUser = (prop: number, value: string) => {
     console.log(prop, value);
     if (prop === 0) {

@@ -2,11 +2,17 @@
 import { useEffect, useState } from "react";
 import { motion } from "motion/react";
 import { arrow, org, user } from "../components/svg/svg";
+import { useGlobal } from "../context/global";
 
 const Landing = () => {
+  const { global, setGlobal } = useGlobal();
   const [refresh, setRefresh] = useState<boolean>(false);
   const [render, setRender] = useState<number>(0);
   const [textAnim, setTextAnim] = useState<number>(0);
+
+  useEffect(() => {
+    setGlobal({ ...global, render: "landing" });
+  }, []);
 
   useEffect(() => {
     if (refresh === true) {
@@ -165,7 +171,7 @@ const Landing = () => {
   );
 
   return (
-    <div className="items-center justify-center flex flex-col gap-10 h-[calc(100vh-60px)] w-[calc(100vw)] p-5">
+    <div className="items-center justify-center flex flex-col h-[calc(100vh-60px)] w-[calc(100vw)]">
       <div className="flex flex-col items-center">
         <h1 className="text-white text-2xl sm:text-3xl font-[600] mb-5 text-center">
           Student Code Lab
