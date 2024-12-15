@@ -158,7 +158,7 @@ const Contact = () => {
         className="w-full h-9 bg-[#0795FF] rounded-md flex items-center justify-center"
         onClick={handleInsertPress}
       >
-        <p className="text-white text-sm">Join SCL</p>
+        <p className="text-white text-sm font-[500]">Join Waitlist</p>
       </button>
     </div>
   );
