@@ -15,8 +15,8 @@ const Header = () => {
 
   const changeRender = (newRender: string) => {
     setGlobal({ render: newRender });
-    if (newRender === "aim") {
-      route.push("/aim");
+    if (newRender === "missionStatement") {
+      route.push("/missionStatement");
     }
     if (newRender === "landing") {
       route.push("./");
@@ -50,8 +50,11 @@ const Header = () => {
               changeRender("landing");
             }}
           >
-            <h1 className="text-white  text-base font-[600] sm:text-lg md:text-lg lg:text-lg">
+            <h1 className="text-white hidden sm:flex  text-base font-[600] sm:text-lg md:text-lg lg:text-lg">
               Student Code Lab
+            </h1>
+            <h1 className="text-white flex sm:hidden  text-base font-[600] sm:text-lg md:text-lg lg:text-lg">
+              Home
             </h1>
           </button>
           {paths.includes(pathname) && (
@@ -89,17 +92,17 @@ const Header = () => {
               </button>
               <button
                 onClick={() => {
-                  changeRender("aim");
+                  changeRender("missionStatement");
                 }}
               >
                 <p className="text-white hover:text-[#8A8A8C] text-[14px] font-[400]">
-                  Our Aim
+                  Mission Statement
                 </p>
               </button>
             </div>
           )}
         </div>
-        {!paths.includes(pathname) && (
+        {/* {!paths.includes(pathname) && (
           <div className="flex-row items-center hidden sm:hidden md:flex lg:flex">
             <button
               onClick={() => {
@@ -119,7 +122,7 @@ const Header = () => {
               </p>
             </button>
           </div>
-        )}
+        )} */}
       </div>
     );
   }

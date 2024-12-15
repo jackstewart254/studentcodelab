@@ -5,6 +5,7 @@ import Header from "./components/header";
 import { GlobalProvider } from "../app/context/global";
 import { usePathname } from "next/navigation";
 import Sidebar from "./components/sidebar";
+import Popup from "./components/popup";
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -32,6 +33,7 @@ export default function RootLayout({
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#171717] fixed w-screen h-screen grid grid-rows-[auto,auto]`}
         >
+          <Popup />
           <Header />
           <div className="grid grid-cols-[auto,auto] relative">
             <Sidebar />

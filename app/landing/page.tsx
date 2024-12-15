@@ -165,17 +165,17 @@ const Landing = () => {
   );
 
   return (
-    <div className="items-center justify-start sm:justify-center flex flex-col gap-10 h-[calc(100vh-60px)] w-[calc(100vw)] p-5">
+    <div className="items-center justify-center flex flex-col gap-10 h-[calc(100vh-60px)] w-[calc(100vw)] p-5">
       <div className="flex flex-col items-center">
-        <h1 className="text-white text-xl sm:text-3xl font-[600] mb-5 text-center">
-          Software Marketplace for Students
+        <h1 className="text-white text-2xl sm:text-3xl font-[600] mb-5 text-center">
+          Student Code Lab
         </h1>
         <p className="text-white text-lg sm:text-xl font-[600]">
-          Find, Solve{" "}
-          <span className="font-[300] text-sm sm:text-base">and</span> Earn
+          Launch Q1 2025
+          {/* <span className="font-[300] text-sm sm:text-base">and</span> Earn */}
         </p>
       </div>
-      {renderMoving()}
+      {/* {renderMoving()} */}
     </div>
   );
 };

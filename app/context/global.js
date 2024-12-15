@@ -6,6 +6,8 @@ const GlobalContext = createContext();
 export const GlobalProvider = ({ children }) => {
   const [global, setGlobal] = useState({
     render: "landing",
+    showPopup: false,
+    popupContent: 0,
   });
 
   return (
