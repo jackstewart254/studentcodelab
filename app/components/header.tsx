@@ -38,26 +38,26 @@ const Header = () => {
     }
   };
 
-  if (hideHeaderPaths.includes(pathname)) {
-    return <div></div>;
-  } else {
-    return (
-      <div className="flex flex-row h-[60px] border-b border-[#2E2E2E] lg:px-[40px] md:px-[40px] sm:px-[20px] px-[10px] items-center justify-between w-screen">
-        <div className="items-center grid grid-cols-[auto,auto]">
-          <button
-            className="mr-5"
-            onClick={() => {
-              changeRender("landing");
-            }}
-          >
-            <h1 className="text-white hidden sm:flex  text-base font-[600] sm:text-lg md:text-lg lg:text-lg">
-              Student Code Lab
-            </h1>
-            <h1 className="text-white flex sm:hidden  text-base font-[600] sm:text-lg md:text-lg lg:text-lg">
-              Home
-            </h1>
-          </button>
-          {paths.includes(pathname) && (
+  // if (hideHeaderPaths.includes(pathname)) {
+  //   return <div></div>;
+  // } else {
+  return (
+    <div className="flex flex-row h-[60px] border-b border-[#2E2E2E] lg:px-[40px] md:px-[40px] sm:px-[20px] px-[10px] items-center justify-between w-screen">
+      <div className="items-center grid grid-cols-[auto,auto]">
+        <button
+          className="mr-5"
+          onClick={() => {
+            changeRender("landing");
+          }}
+        >
+          <h1 className="text-white hidden sm:flex  text-base font-[600] sm:text-lg md:text-lg lg:text-lg">
+            Student Code Lab
+          </h1>
+          <h1 className="text-white flex sm:hidden  text-base font-[600] sm:text-lg md:text-lg lg:text-lg">
+            Home
+          </h1>
+        </button>
+        {/* {paths.includes(pathname) && (
             <button
               onClick={() => {
                 changeRender("blog");
@@ -68,10 +68,10 @@ const Header = () => {
                 Blog
               </p>
             </button>
-          )}
-          {!paths.includes(pathname) && (
-            <div className="grid-cols-2 items-center flex gap-5 md:gap-5 lg:gap-5">
-              {/* <button
+          )} */}
+        {/* {!paths.includes(pathname) && ( */}
+        <div className="grid-cols-2 items-center flex gap-5 md:gap-5 lg:gap-5">
+          {/* <button
                 className="hidden sm:hidden md:flex lg:flex"
                 onClick={() => {
                   changeRender("case");
@@ -81,36 +81,36 @@ const Header = () => {
                   Case Studies
                 </p>
               </button> */}
-              <button
-                onClick={() => {
-                  changeRender("contact");
-                }}
-              >
-                <motion.p
-                  className="text-white hover:text-[#8A8A8C] text-[14px] font-[400]"
-                  animate={{
-                    color: render === "contact" ? "#8A8A8C" : "white",
-                  }}
-                >
-                  Join Waitlist
-                </motion.p>
-              </button>
-              <button
-                onClick={() => {
-                  changeRender("missionStatement");
-                }}
-              >
-                <motion.p
-                  className="text-white hover:text-[#8A8A8C] text-[14px] font-[400]"
-                  animate={{ color: render === "aim" ? "#8A8A8C" : "white" }}
-                >
-                  Mission Statement
-                </motion.p>
-              </button>
-            </div>
-          )}
+          <button
+            onClick={() => {
+              changeRender("contact");
+            }}
+          >
+            <motion.p
+              className="text-white hover:text-[#8A8A8C] text-[14px] font-[400]"
+              animate={{
+                color: render === "contact" ? "#8A8A8C" : "white",
+              }}
+            >
+              Join Waitlist
+            </motion.p>
+          </button>
+          <button
+            onClick={() => {
+              changeRender("missionStatement");
+            }}
+          >
+            <motion.p
+              className="text-white hover:text-[#8A8A8C] text-[14px] font-[400]"
+              animate={{ color: render === "aim" ? "#8A8A8C" : "white" }}
+            >
+              Mission Statement
+            </motion.p>
+          </button>
         </div>
-        {/* {!paths.includes(pathname) && (
+        {/* )} */}
+      </div>
+      {/* {!paths.includes(pathname) && (
           <div className="flex-row items-center hidden sm:hidden md:flex lg:flex">
             <button
               onClick={() => {
@@ -131,9 +131,9 @@ const Header = () => {
             </button>
           </div>
         )} */}
-      </div>
-    );
-  }
+    </div>
+  );
+  // }
 };
 
 export default Header;

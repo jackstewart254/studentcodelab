@@ -36,7 +36,7 @@ export default function RootLayout({
           <Popup />
           <Header />
           <div className="grid grid-cols-[auto,auto] relative">
-            <Sidebar />
+            {/* <Sidebar /> */}
             {children}
           </div>
         </body>
