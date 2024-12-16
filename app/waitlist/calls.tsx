@@ -3,7 +3,13 @@ import supabase from "../../supabase.js";
 const insertInSupabase = async ({
   payload,
 }: {
-  payload: { email: string; name: string; university: string };
+  payload: {
+    email: string;
+    fname: string;
+    university: string;
+    lname: string;
+    year: string;
+  };
 }) => {
   const { data: waitlist, error: waitlistError } = await supabase
     .from("waiting_list")
@@ -23,8 +29,10 @@ const insertInSupabase = async ({
         .insert([
           {
             email: payload.email,
-            name: payload.name,
+            fname: payload.fname,
             university: payload.university,
+            lname: payload.lname,
+            year: payload.year,
           },
         ])
         .select("*");
@@ -36,8 +44,10 @@ const insertInSupabase = async ({
       .insert([
         {
           email: payload.email,
-          name: payload.name,
+          fname: payload.fname,
           university: payload.university,
+          lname: payload.lname,
+          year: payload.year,
         },
       ])
       .select("*");

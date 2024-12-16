@@ -7,8 +7,23 @@ import { useEffect } from "react";
 
 const Popup = () => {
   const { global, setGlobal } = useGlobal();
-  const { showPopup, popupContent } = global;
+  const { showPopup, popupContent, fields } = global;
   const router = useRouter();
+
+  useEffect(() => {
+    console.log("fields", fields);
+  }, [fields]);
+
+  useEffect(() => {
+    fetchIP();
+  }, []);
+
+  const fetchIP = async () => {
+    const res = await fetch("/api/get-ip");
+    console.log("RES", res);
+    const data = await res.json();
+    console.log(data);
+  };
 
   const closePopup = () => {
     setGlobal({ ...global, showPopup: false });
@@ -21,7 +36,32 @@ const Popup = () => {
 
   const fieldEmptyPopup = () => (
     <div className="w-[240px] bg-white border border-[#d9d9d9] p-[10px] rounded-md sm:w-[320px] absolute z-20 flex flex-col gap-[10px]">
-      <p className="text-sm font-[400]">All fields must be filled</p>
+      <p className="text-sm font-[600] text-black">Empty or invalid fields</p>
+      <p className="text-sm font-[400] text-black">
+        Currently invalid fields incl:{" "}
+        <span className="font-[500] text-black">
+          {fields.map((item: string, index: number) => {
+            const displayName =
+              item === "fname"
+                ? "First name"
+                : item === "lname"
+                ? "Last name"
+                : item === "email"
+                ? "Email"
+                : item === "year"
+                ? "Year of study"
+                : "University";
+
+            return (
+              <span key={index}>
+                {displayName}
+                {index + 1 < fields.length ? ", " : ""}
+              </span>
+            );
+          })}
+        </span>
+      </p>
+
       <button
         className="w-full py-1 bg-red-600 rounded-md"
         onClick={closePopup}
@@ -33,9 +73,10 @@ const Popup = () => {
 
   const successfulWaitlist = () => (
     <div className="w-[240px] bg-white border border-[#d9d9d9] p-[10px] rounded-md sm:w-[320px] absolute z-20 flex flex-col gap-[10px]">
-      <p className="text-sm font-[500]">
-        <span className="font-[600] text-base">AWESOME!</span> Welcome aboard
-        this journey
+      <p className="text-base font-[600] w-full text-black">AWESOME!</p>
+      <p className="text-black font-[400] text-base">
+        {" "}
+        Welcome aboard this journey
       </p>
       <button
         className="w-full py-1 bg-[#0795FF] rounded-md"
@@ -48,7 +89,9 @@ const Popup = () => {
 
   const alreadyPresent = () => (
     <div className="w-[240px] bg-white border border-[#d9d9d9] p-[10px] rounded-md sm:w-[320px] absolute z-20 flex flex-col gap-[10px]">
-      <p className="text-sm font-[500]">You've already joined the waitlist</p>
+      <p className="text-sm font-[500] text-black">
+        You've already joined the waitlist
+      </p>
       <button
         className="w-full py-1 bg-red-600 rounded-md"
         onClick={closePopup}

@@ -8,6 +8,7 @@ export const GlobalProvider = ({ children }) => {
     render: "landing",
     showPopup: false,
     popupContent: 0,
+    fields: [],
   });
 
   return (
