@@ -4,10 +4,11 @@ import { motion } from "motion/react";
 import { useRouter } from "next/navigation";
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
+import { insertVisit } from "../waitlist/calls";
 
 const Popup = () => {
   const { global, setGlobal } = useGlobal();
-  const { showPopup, popupContent, fields } = global;
+  const { showPopup, popupContent, fields, render } = global;
   const router = useRouter();
 
   useEffect(() => {
@@ -16,13 +17,14 @@ const Popup = () => {
 
   useEffect(() => {
     fetchIP();
-  }, []);
+  }, [render]);
 
   const fetchIP = async () => {
     const res = await fetch("/api/get-ip");
-    console.log("RES", res);
     const data = await res.json();
-    console.log(data);
+    if (data.ip !== "::1") {
+      insertVisit(data.ip, render);
+    }
   };
 
   const closePopup = () => {
